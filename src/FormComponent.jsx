@@ -17,7 +17,7 @@ export default function FormComponent() {
       hourIn,
       details
     };
-    
+
     setPatients([...patients, information]);
 
     setPet("");
@@ -32,19 +32,19 @@ export default function FormComponent() {
       <form className="inputForm" action="">
 
         <label htmlFor="pet">Nombre Mascota</label>
-        <input id="pet" type="text" value={pet} onChange={(e) => { setPet(e.target.value)}} required/>
+        <input id="pet" type="text" value={pet} onChange={(e) => { setPet(e.target.value)}}/>
 
         <label htmlFor="owner">Nombre Dueño</label>
-        <input id="owner" type="text" value={owner} onChange={(e) => { setOwner(e.target.value)}} required/>
+        <input id="owner" type="text" value={owner} onChange={(e) => { setOwner(e.target.value)}}/>
 
         <label htmlFor="dateIn">Fecha de Ingreso</label>
-        <input id="dateIn" type="date" value={dateIn} onChange={(e) => { setDateIn(e.target.value)}} required/>
+        <input id="dateIn" type="date" value={dateIn} onChange={(e) => { setDateIn(e.target.value)}}/>
 
         <label htmlFor="hourIn">Hora de Ingreso</label>
-        <input id="hourIn" type="time" value={hourIn} onChange={(e) => { setHourIn(e.target.value)}} required/>
+        <input id="hourIn" type="time" value={hourIn} onChange={(e) => { setHourIn(e.target.value)}}/>
 
         <label htmlFor="details">Detalles</label>
-        <textarea id="details" type="text" value={details} onChange={(e) => { setDetails(e.target.value)}} required/>
+        <textarea id="details" type="text" value={details} onChange={(e) => { setDetails(e.target.value)}}/>
 
         <button onClick={addPatient} type="button">
           Agregar
