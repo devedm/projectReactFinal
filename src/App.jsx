@@ -9,13 +9,13 @@ function App() {
 
   return (
     <div className="grid grid-cols-2 gap-4">
-      <div>
+      <div className="flex flex-col items-center h-screen">
         <HeaderComponent title="Crear Cita" />
         <FormComponent patients={patients} setPatients={setPatients} />
       </div>
-      <div>
+      <div className="flex flex-col items-center h-screen">
         <HeaderComponent title="Citas" />
-        <PatientsComponent patients={patients} setPatients={setPatients}/>
+        <PatientsComponent patients={patients}/>
       </div>
     </div>
   );

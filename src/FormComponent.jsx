@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./FormComponent.css";
 
 export default function FormComponent({ patients, setPatients }) {
   const [pet, setPet] = useState("");
