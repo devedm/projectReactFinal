@@ -1,11 +1,12 @@
 import React from "react";
 
-export default function PatientsComponent({ patients }) {
+export default function PatientsComponent({ patients , deletePatient}) {
+
   return (
     <div>
       {patients.map((patient, index) => (
         <div
-          key={patient.pet + "-" + index}
+          key={index}
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 text-left"
         >
           <p className="text-gray-700 text-base">Mascota: {patient.pet}</p>
@@ -16,7 +17,10 @@ export default function PatientsComponent({ patients }) {
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
-          >Eliminar</button>
+            onClick={() => deletePatient(index)}
+          >
+            Eliminar cita
+          </button>
         </div>
       ))}
     </div>

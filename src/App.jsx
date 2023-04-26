@@ -7,6 +7,12 @@ import PatientsComponent from "./PatientsComponent";
 function App() {
   const [patients, setPatients] = useState([]);
 
+  const deletePatient = (index) => {
+    const updatedPatients = [...patients];
+    updatedPatients.splice(index, 1);
+    setPatients(updatedPatients);
+  };
+
   return (
     <div className="grid grid-cols-2 gap-4">
       <div className="flex flex-col items-center h-screen">
@@ -14,8 +20,10 @@ function App() {
         <FormComponent patients={patients} setPatients={setPatients} />
       </div>
       <div className="flex flex-col items-center h-screen">
-        <HeaderComponent title="Citas" />
-        <PatientsComponent patients={patients}/>
+        <HeaderComponent
+          title={patients.length === 0 ? "No hay citas" : "Lista de Citas"}
+        />
+        <PatientsComponent patients={patients} deletePatient={deletePatient} />
       </div>
     </div>
   );
